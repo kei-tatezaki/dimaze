@@ -67,6 +67,11 @@ dl.facts dt{color:var(--muted);font-size:14px;padding-right:20px;white-space:now
 footer{padding-block:40px 56px;color:var(--muted);font-size:14px}
 footer .row{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
 @media (prefers-reduced-motion:reduce){.hero video{display:none}}
+.road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:12px}
+.road li{border:1px solid var(--line);border-radius:6px;padding:16px;background:var(--panel);display:grid;gap:6px}
+.road b{font-family:var(--display);font-size:18px;color:var(--drain)}
+.road span{color:#d6cfe6;font-size:14px}
+.road i{display:block;font-style:normal;color:var(--muted);font-size:12px;margin-top:4px}
 </style>
 </head>
 <body>
@@ -124,6 +129,16 @@ footer .row{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
     <a href="img/ss_08.jpg" target="_blank" rel="noopener"><img src="img/ss_08_s.jpg" alt="第5層" loading="lazy"></a>
     <a href="img/ss_09_majak.jpg" target="_blank" rel="noopener"><img src="img/ss_09_majak_s.jpg" alt="咆哮するマジャク" loading="lazy"></a>
   </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <h2>製品版に向けて<span class="en">Coming in the full version</span></h2>
+  <ul class="road">
+    <li><b>新しいボス</b><span>塔の主たちを追加します。<i>More tower bosses</i></span></li>
+    <li><b>罠魔法</b><span>部屋に仕掛けられた魔法の罠。これも吸い込めます。<i>Trap magic</i></span></li>
+    <li><b>新しい敵</b><span>吸い込める魔法の種類が増えます。<i>New enemies and spells</i></span></li>
+    <li><b>開けた層</b><span>閉じた部屋だけでなく、広く見渡せるオープンな層。<i>Open, non-linear floors</i></span></li>
+  </ul>
 </div></section>
 
 <section id="about"><div class="wrap">
