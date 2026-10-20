@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../img/library_logo_1280x720.png">
+<title>DIMAZE プレスキット</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+html,body{margin:0}
+/* Layout: one dark column like a dungeon corridor; logo up top, facts beside the pitch, screenshots as a contact sheet, contact at the foot. Single dark theme by choice. */
+:root{
+  --bg:#0d0b14; --panel:#16131f; --line:#2a2438; --fg:#ece8f4; --muted:#a59cb8;
+  --drain:#b98cff; --ember:#ffb020;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --body:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.8;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:56px}
+header{display:grid;gap:18px;justify-items:start}
+header img.logo{width:min(420px,80%);height:auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,4.4vw,42px);line-height:1.35;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--drain)}
+h1 b{color:var(--ember);font-weight:800}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:6px;color:var(--fg);text-decoration:none;font-weight:500;background:var(--panel)}
+.btn.primary{background:var(--drain);border-color:var(--drain);color:#140c22}
+.btn:hover,.btn:focus-visible{border-color:var(--drain);outline:none}
+.btn.primary:hover,.btn.primary:focus-visible{filter:brightness(1.08)}
+h2{font-family:var(--display);font-size:22px;margin:0 0 16px;font-weight:700}
+.two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.prose p{margin:0 0 14px;max-width:62ch}
+.prose h3{font-size:16px;margin:22px 0 6px;color:var(--fg)}
+.prose h3 span{color:var(--drain)}
+dl.facts{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line)}
+dl.facts dt,dl.facts dd{margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+dl.facts dt{color:var(--muted);font-size:13px;padding-right:18px;white-space:nowrap}
+dl.facts dd{min-width:0;overflow-wrap:anywhere}
+dl.facts a{color:var(--drain)}
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px}
+.sheet figure{margin:0;display:grid;gap:6px}
+.sheet a{display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--panel)}
+.sheet a:hover,.sheet a:focus-visible{border-color:var(--drain);outline:none}
+.sheet img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.sheet figcaption{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.sheet figcaption code{font-family:var(--mono);font-size:11px;color:var(--muted);opacity:.8}
+.note{font-size:13px;color:var(--muted);margin:0 0 14px}
+.assets{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:14px}
+.assets a{display:grid;gap:8px;padding:12px;border:1px solid var(--line);border-radius:4px;color:var(--fg);text-decoration:none;background:var(--panel)}
+.assets a:hover,.assets a:focus-visible{border-color:var(--drain);outline:none}
+.assets img{width:100%;height:120px;object-fit:contain;background:repeating-conic-gradient(#1b1726 0 25%,#221d2f 0 50%) 0 0/16px 16px}
+.assets small{color:var(--muted);font-family:var(--mono);font-size:11px}
+.contact{border-top:1px solid var(--line);padding-top:28px;display:grid;gap:10px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mail code{font-family:var(--mono);font-size:16px;user-select:all;background:var(--panel);border:1px solid var(--line);padding:6px 10px;border-radius:4px}
+.mail button{font:inherit;font-size:13px;padding:6px 12px;border-radius:4px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.mail button:hover,.mail button:focus-visible{border-color:var(--drain);outline:none}
+.en{border:1px solid var(--line);border-radius:6px;padding:20px;background:var(--panel)}
+.en p{margin:0 0 10px;max-width:70ch}
+@media (prefers-reduced-motion:no-preference){.btn,.sheet a,.assets a{transition:border-color .15s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <img class="logo" src="../img/library_logo_1280x720.png" alt="DIMAZE ロゴ">
+    <div class="eyebrow">Press kit · Steam Next Fest 2026年10月 参加中</div>
+    <h1>敵の魔法を<em>吸い込んで</em>、そのまま<b>撃ち返す</b>。<br>3Dアクションローグライト『DIMAZE』</h1>
+    <p class="lede">専門学校の学生チームが開発中の3Dアクションローグライトです。Steamで体験版（約30分）を無料配信しています。記事の作成に必要な情報と素材を、このページにまとめました。素材は自由にお使いください。</p>
+    <div class="links">
+      <a class="btn primary" href="https://store.steampowered.com/app/4859690/DIMAZE/?utm_source=presskit_site" target="_blank" rel="noopener">Steamストアページ</a>
+      <a class="btn" href="https://www.youtube.com/watch?v=-ptKhAEagBg" target="_blank" rel="noopener">トレーラー（YouTube）</a>
+      <a class="btn" href="https://youtube.com/shorts/WT5dfHGEG34" target="_blank" rel="noopener">プレイ動画（15秒）</a>
+      <a class="btn" href="../">公式サイト</a>
+    </div>
+  </header>
+
+  <section class="two">
+    <div class="prose">
+      <h2>ゲーム紹介</h2>
+      <p>主人公は、敵が放った火の玉やレーザー、氷の槍を「ドレインホール」で吸い込み、溜めて、そのまま敵に撃ち返して戦います。避けるより、喰らう。敵の攻撃が強いほど、こちらの武器も強くなります。</p>
+      <h3><span>■</span> 敵の攻撃が、そのまま自分の武器になる</h3>
+      <p>吸い込んだ魔法は種類ごとに性質が変わります。予告線の出た攻撃にあえて飛び込み、吸い込んだ瞬間に撃ち返す。危ない場面ほど大きなチャンスになります。</p>
+      <h3><span>■</span> 階ごとに姿を変える、果てのない塔</h3>
+      <p>自動で生成される塔を登っていくローグライトです。罠や魔法陣の仕掛けが多い階、鍵を取ると敵が押し寄せる階など、階ごとに遊び方が変わります。</p>
+      <h3><span>■</span> 体験版の内容</h3>
+      <p>第1層から第3層までを遊べます。最後は、塔の主の一体「マジャク」が姿を現すところまでです。</p>
+    </div>
+    <div>
+      <h2>作品概要</h2>
+      <dl class="facts">
+        <dt>タイトル</dt><dd>DIMAZE（ディメイズ）</dd>
+        <dt>ジャンル</dt><dd>3Dアクションローグライト</dd>
+        <dt>対応機種</dt><dd>PC（Steam）</dd>
+        <dt>発売予定</dt><dd>2026年12月</dd>
+        <dt>価格</dt><dd>未定</dd>
+        <dt>体験版</dt><dd>配信中（無料・約30分）</dd>
+        <dt>対応言語</dt><dd>日本語／英語</dd>
+        <dt>イベント</dt><dd>Steam Next Fest（2026年10月20日〜27日）参加中</dd>
+        <dt>開発</dt><dd>DIMAZE開発チーム（専門学校の学生チーム）</dd>
+        <dt>Steam</dt><dd><a href="https://store.steampowered.com/app/4859690/DIMAZE/?utm_source=presskit_site" target="_blank" rel="noopener">store.steampowered.com/app/4859690</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>スクリーンショット</h2>
+    <p class="note">画像を押すと 1920×1080 の元画像が新しいタブで開きます。右クリックの「名前を付けて画像を保存」で保存できます。</p>
+    <div class="sheet">
+      <figure><a href="../img/ss_01.jpg" target="_blank" rel="noopener"><img src="../img/ss_01_s.jpg" alt="火の玉に向けてドレインホールを開く主人公" loading="lazy"></a><figcaption>迫る火の玉を吸い込む<code>ss_01</code></figcaption></figure>
+      <figure><a href="../img/ss_02.jpg" target="_blank" rel="noopener"><img src="../img/ss_02_s.jpg" alt="雲の上まで伸びる塔の外観" loading="lazy"></a><figcaption>果てのない塔<code>ss_02</code></figcaption></figure>
+      <figure><a href="../img/ss_03.jpg" target="_blank" rel="noopener"><img src="../img/ss_03_s.jpg" alt="魔法陣とレーザーの罠がある部屋" loading="lazy"></a><figcaption>魔法陣とレーザーの罠<code>ss_03</code></figcaption></figure>
+      <figure><a href="../img/ss_04.jpg" target="_blank" rel="noopener"><img src="../img/ss_04_s.jpg" alt="敵の魔法陣を吸い込む紫の渦" loading="lazy"></a><figcaption>敵の魔法陣ごと吸い込む<code>ss_04</code></figcaption></figure>
+      <figure><a href="../img/ss_05.jpg" target="_blank" rel="noopener"><img src="../img/ss_05_s.jpg" alt="炎の魔法使いとの戦い" loading="lazy"></a><figcaption>炎の魔法使いとの戦い<code>ss_05</code></figcaption></figure>
+      <figure><a href="../img/ss_06.jpg" target="_blank" rel="noopener"><img src="../img/ss_06_s.jpg" alt="氷の洞窟で魔法を吸い込む" loading="lazy"></a><figcaption>氷の洞窟<code>ss_06</code></figcaption></figure>
+      <figure><a href="../img/ss_07.jpg" target="_blank" rel="noopener"><img src="../img/ss_07_s.jpg" alt="通路で敵の攻撃を吸い込む" loading="lazy"></a><figcaption>通路での吸い込み<code>ss_07</code></figcaption></figure>
+      <figure><a href="../img/ss_08.jpg" target="_blank" rel="noopener"><img src="../img/ss_08_s.jpg" alt="第5層に到着した主人公" loading="lazy"></a><figcaption>階ごとに変わる部屋<code>ss_08</code></figcaption></figure>
+      <figure><a href="../img/ss_09_majak.jpg" target="_blank" rel="noopener"><img src="../img/ss_09_majak_s.jpg" alt="炎の髪を逆立てて咆哮する塔の主マジャク" loading="lazy"></a><figcaption>咆哮する塔の主「マジャク」<code>ss_09</code></figcaption></figure>
+      <figure><a href="../img/ss_10.jpg" target="_blank" rel="noopener"><img src="../img/ss_10_s.jpg" alt="ゲーム画面" loading="lazy"></a><figcaption>ゲーム画面<code>ss_10</code></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>ロゴ・キービジュアル</h2>
+    <div class="assets">
+      <a href="../img/library_logo_1280x720.png" target="_blank" rel="noopener"><img src="../img/library_logo_1280x720.png" alt="DIMAZE ロゴ（透過）"><span>ロゴ（背景透過 PNG）</span><small>1280×720</small></a>
+      <a href="../img/main_capsule_1232x706.png" target="_blank" rel="noopener"><img src="../img/main_capsule_1232x706.png" alt="キービジュアル"><span>キービジュアル</span><small>1232×706</small></a>
+      <a href="../media/majak.gif" target="_blank" rel="noopener"><img src="../media/majak_poster.jpg" alt="マジャクの登場GIF"><span>GIF：マジャクの咆哮</span><small>960×540 · 4.4MB</small></a>
+      <a href="../media/ascent.mp4" target="_blank" rel="noopener"><img src="../media/ascent_poster.jpg" alt="層を登る演出の動画"><span>動画：塔を登る演出</span><small>960×540 · MP4</small></a>
+      <a href="../img/header_capsule_920x430.png" target="_blank" rel="noopener"><img src="../img/header_capsule_920x430.png" alt="ヘッダー画像"><span>ヘッダー画像</span><small>920×430</small></a>
+    </div>
+  </section>
+
+  <section class="en" lang="en">
+    <h2>In English</h2>
+    <p><strong>DIMAZE</strong> is a 3D action roguelite made by a small student team in Japan. Drain enemy spells (fireballs, lasers, ice spears), hold them, and fire them right back while you climb an endless tower whose floors keep changing.</p>
+    <p>A free demo (about 30 minutes) is available on Steam and is part of Steam Next Fest, October 20–27, 2026. Planned release: December 2026 on PC (Steam). Languages: Japanese, English. All screenshots and logos on this page are free to use for coverage.</p>
+  </section>
+
+  <section class="contact">
+    <h2>お問い合わせ / Contact</h2>
+    <p class="note" style="margin:0">DIMAZE開発チーム　太郎</p>
+    <div class="mail">
+      <code id="mail">tatekei170@gmail.com</code>
+      <button type="button" id="copy">コピー</button>
+      <span id="copied" class="note" style="margin:0" hidden>コピーしました</span>
+    </div>
+  </section>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('mail').textContent, ok=document.getElementById('copied');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  try{navigator.clipboard.writeText(t).then(function(){ok.hidden=false;},sel);}catch(e){sel();}
+});
+</script>
+
+</body>
+</html>
