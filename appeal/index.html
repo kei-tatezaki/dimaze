@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DIMAZE 作品アピール｜審査用資料</title>
+<meta name="description" content="3Dアクションローグライト『DIMAZE』の審査用資料。コンセプト、独自性、手触りの作り込み、制作工程、AIの使用箇所をまとめています。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../img/library_logo_1280x720.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#0d0b14; --panel:#16131f; --panel2:#1c1828; --line:#2a2438; --fg:#ece8f4; --muted:#a59cb8; --soft:#d6cfe6;
+  --drain:#b98cff; --ember:#ffb020; --ice:#78d2ff;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --body:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.85}
+a{color:var(--drain)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+nav{display:flex;justify-content:space-between;align-items:center;padding-block:14px;gap:12px;flex-wrap:wrap}
+nav img{height:40px;width:auto}
+nav .r{display:flex;gap:14px;font-size:13px;flex-wrap:wrap}
+nav .r a{color:var(--muted);text-decoration:none}
+nav .r a:hover{color:var(--fg)}
+header.top{border-bottom:1px solid var(--line);padding-block:40px 56px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,46px);line-height:1.35;margin:10px 0 16px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--drain)} h1 b{color:var(--ember)}
+.lede{max-width:60ch;margin:0 0 28px;color:var(--soft)}
+.trailer{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#000}
+.trailer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.criteria{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:8px;margin:28px 0 0;padding:0;list-style:none}
+.criteria a{display:block;text-decoration:none;border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:10px 12px;color:var(--soft);font-size:13px;line-height:1.5}
+.criteria a b{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:500}
+.criteria a:hover,.criteria a:focus-visible{border-color:var(--drain);outline:none}
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+.num{font-family:var(--mono);font-size:12px;color:var(--drain);letter-spacing:.12em}
+h2{font-family:var(--display);font-size:clamp(22px,3vw,30px);margin:4px 0 20px;text-wrap:balance}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 14px;max-width:66ch;color:var(--soft)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.media video,.media img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line);background:#000}
+.cap{font-size:13px;color:var(--muted);margin-top:6px}
+.loop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 18px;padding:0;list-style:none}
+.loop li{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+.loop li.a{border-color:#5b4a2a;color:var(--ember)} .loop li.b{border-color:#4b3a6e;color:var(--drain)} .loop li.c{border-color:#2d4c5e;color:var(--ice)}
+.loop .arw{border:0;background:none;color:var(--muted);padding:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:12px;margin-top:8px}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:16px}
+.card b{display:block;font-family:var(--display);font-size:17px;color:var(--fg);margin-bottom:6px}
+.card span{display:block;color:var(--soft);font-size:14px;line-height:1.7}
+.tw{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:13px;background:var(--panel2)}
+td b{color:var(--fg)}
+ol.time{list-style:none;margin:8px 0 0;padding:0;border-left:2px solid var(--line)}
+ol.time li{position:relative;padding:0 0 18px 20px}
+ol.time li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--drain)}
+ol.time time{font-family:var(--mono);font-size:12px;color:var(--muted);display:block}
+ol.time span{color:var(--soft)}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(200px,100%),1fr));gap:12px;margin:8px 0 18px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--panel)}
+.stat b{display:block;font-family:var(--display);font-size:30px;line-height:1.2;color:var(--fg);font-variant-numeric:tabular-nums}
+.stat span{display:block;color:var(--muted);font-size:13px}
+.short{width:min(320px,100%);aspect-ratio:9/16;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#000;position:relative}
+.short iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.note{border:1px solid var(--line);border-left:3px solid var(--drain);background:var(--panel);border-radius:6px;padding:14px 16px;margin-top:12px}
+.note p{margin:0}
+dl.facts{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line);max-width:680px}
+dl.facts dt,dl.facts dd{margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+dl.facts dt{color:var(--muted);font-size:14px;padding-right:20px;white-space:nowrap}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;padding:11px 18px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);text-decoration:none;font-weight:700;font-size:15px}
+.btn.primary{background:var(--drain);border-color:var(--drain);color:#140c22}
+.btn:hover,.btn:focus-visible{border-color:var(--drain);outline:none}
+footer{padding-block:36px 56px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap"><nav><a href="../"><img src="../img/library_logo_1280x720.png" alt="DIMAZE"></a><div class="r"><a href="#c1">独自性</a><a href="#c2">わかりやすさ</a><a href="#c3">ゲームとして</a><a href="#c4">プレイ体感</a><a href="#c5">突き詰め</a><a href="#c6">完成度</a><a href="#ai">AIの使用</a></div></nav></div>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">ゲームクリエイター甲子園 2026 · 審査用資料</div>
+  <h1>敵の魔法を<em>発動中に吸い込み</em>、<br>その魔力で<b>撃ち返す</b>。</h1>
+  <p class="lede">『DIMAZE（ディメイズ）』は、果てのない塔を登る3Dアクションローグライトです。主人公は、敵がファイアーボールやレーザー、アイススピアを発動しているその最中に、魔法陣ごと「ドレインホール」で吸い込み、溜めた魔力で撃ち返して戦います。避けるより、喰らう。敵の攻撃が強いほど、こちらの武器も強くなります。</p>
+  <div class="trailer"><iframe src="https://www.youtube-nocookie.com/embed/-ptKhAEagBg" title="DIMAZE トレーラー" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  <ul class="criteria">
+    <li><a href="#c1"><b>01</b>独自性・面白いポイント</a></li>
+    <li><a href="#c2"><b>02</b>わかりやすさ・伝わるか</a></li>
+    <li><a href="#c3"><b>03</b>ゲームとして成立しているか</a></li>
+    <li><a href="#c4"><b>04</b>プレイ体感</a></li>
+    <li><a href="#c5"><b>05</b>努力・突き詰め</a></li>
+    <li><a href="#c6"><b>06</b>商品としての完成度</a></li>
+  </ul>
+</div></header>
+
+<section id="c1"><div class="wrap split">
+  <div>
+    <div class="num">01 · 独自性・面白いポイント</div>
+    <h2>「避ける」アクションを、「喰らう」アクションに変えた</h2>
+    <p>多くのアクションゲームでは、敵の魔法は避けるか防ぐものです。DIMAZEでは、敵の魔法そのものが自分の武器になります。</p>
+    <ul class="loop">
+      <li class="a">敵が魔法陣を展開</li><li class="arw">→</li>
+      <li class="b">発動中に吸い込む</li><li class="arw">→</li>
+      <li class="c">魔力を溜める</li><li class="arw">→</li>
+      <li class="a">撃ち返す</li>
+    </ul>
+    <p><b>危険なものほど、おいしい。</b> 強い敵の大きな魔法ほど、吸えれば強い武器になります。だから、プレイヤーは危ない攻撃に自分から近づいていきます。普通のアクションとは逆の判断が生まれるのが、この作品の面白さの芯です。</p>
+    <p><b>吸うには賭けがいる。</b> ドレインホールは開いている間スタミナを使い、空振りすると約1.4秒無防備になります。早く開けすぎれば損をし、遅ければ当たる。敵の詠唱を読んで、ちょうどの瞬間に口を開く駆け引きがあります。</p>
+  </div>
+  <div class="media"><video src="../media/drain_fireback.mp4" poster="../media/drain_poster.jpg" autoplay muted loop playsinline></video><div class="cap">魔法使いの火球を吸い込み、そのまま撃ち返す</div></div>
+</div></section>
+
+<section id="c2"><div class="wrap split">
+  <div class="media"><img src="../img/ss_04.jpg" alt="敵の魔法陣を紫の渦で吸い込んでいる場面" loading="lazy"><div class="cap">発動中の魔法陣を、紫の渦で吸い込む瞬間</div></div>
+  <div>
+    <div class="num">02 · わかりやすさ・伝わるか</div>
+    <h2>一文で説明でき、見ただけで分かる</h2>
+    <p>「敵の魔法を吸って、撃ち返す」。仕組みは一文で言い切れるようにしています。そのうえで、文字の説明に頼らず、見た目と音で伝わるように作っています。</p>
+    <div class="cards">
+      <div class="card"><b>吸える物は光り方で分かる</b><span>魔力を持つ弾や魔法陣は、同じ光り方で「吸える」と示します。剣や魔力を持たない敵は弾かれ、火花と鈍い音で「吸えない」と分かります。</span></div>
+      <div class="card"><b>初めての魔法は、止めて見せる</b><span>初めて吸った魔法だけ時間を止め、手元に集まった魔力がHUDの枠へ収まる動きを見せます。文字を出さずに「これが、ここに入った」と目で追えます。</span></div>
+      <div class="card"><b>敵の予兆を読む</b><span>攻撃の前には赤い予告線や魔法陣が出ます。プレイヤーはそれを見て、避けるか、吸うかを選びます。</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="c3"><div class="wrap">
+  <div class="num">03 · ゲームとして成立しているか</div>
+  <h2>階ごとに遊び方が変わる塔を、体験版で約15分遊べます</h2>
+  <p>自動生成される塔を一層ずつ登るローグライトです。Steamで体験版を無料配信しており、第3層の終わりで塔の番人「マジャーク」が現れるところまで遊べます。</p>
+  <div class="cards">
+    <div class="card"><b>第1層　目覚めの層</b><span>基本の操作とドレインホールを覚える層。初めての魔法を吸って覚える体験もここで起きます。</span></div>
+    <div class="card"><b>第2層　亡き者の層</b><span>かつて塔を登ろうとして力尽きた魔法使いたちの層。炎と氷の魔法使いを相手に、吸って返す戦い方を磨きます。</span></div>
+    <div class="card"><b>第3層　魔法仕掛けの層</b><span>床の魔法陣の罠が多い層。罠の魔法も吸えます。祭壇の鍵を取ると罠が一斉に起き、門から敵が湧き出します。</span></div>
+    <div class="card"><b>塔の番人　マジャーク</b><span>炎の髪を持つ番人。渦から落ちてきて咆哮する登場演出までを体験版に入れています。</span></div>
+  </div>
+  <div class="split" style="margin-top:28px">
+    <div class="media"><video src="../media/ascent.mp4" poster="../media/ascent_poster.jpg" autoplay muted loop playsinline></video><div class="cap">層を登る演出</div></div>
+    <div class="media"><video src="../media/majak.mp4" poster="../media/majak_poster.jpg" autoplay muted loop playsinline></video><div class="cap">塔の番人マジャークの登場</div></div>
+  </div>
+</div></section>
+
+<section id="c4"><div class="wrap">
+  <div class="num">04 · プレイ体感</div>
+  <h2>「吸い込む瞬間」の気持ちよさを、コマ送りで詰めた</h2>
+  <p>中心の動き（ドレインホール）が気持ちよくなければ、この作品は成り立ちません。遊んでみて「まだ気持ちよくない」と感じたところから、60fpsで撮ってコマ送りで見直し、原因を一つずつ探しました。</p>
+  <h3>見つけた原因と、直したこと</h3>
+  <div class="tw"><table>
+    <thead><tr><th>見つけた問題</th><th>原因</th><th>直したこと</th></tr></thead>
+    <tbody>
+      <tr><td><b>口に入る瞬間が見えない</b></td><td>掴んだ瞬間の閃光で画面がピンク白に飛び、弾が巻き込まれる0.16秒が隠れていた</td><td>閃光を0.35倍に抑え、白飛びや全画面の色フラッシュを使わない決まりにした</td></tr>
+      <tr><td><b>吸った後に目の前で爆発する</b></td><td>一斉射の3発目が渦に飲まれず、口の手前の地形に触れて爆ぜていた</td><td>弾を口の前で止める時間を延ばし、近くの弾をまとめて飲み込むようにした</td></tr>
+      <tr><td><b>火球が抵抗しない</b></td><td>弾がすっと消えるだけで、吸い込む手応えがなかった</td><td>口の前で0.22秒震えて膨らみ、粘ってから巻き込まれるようにした</td></tr>
+      <tr><td><b>音に山がない</b></td><td>吸収音の一番大きい部分が、飲み込んだ0.53秒後に来ていた</td><td>掴んだ瞬間は吸い込みの音だけ、飲み込みきった瞬間に一番大きい「ゴクン」を鳴らす順番に変えた</td></tr>
+      <tr><td><b>耳障りなパチパチ音</b></td><td>「吸える」合図の音が0.4秒ごとに鳴り続け、炎のループ音にもノイズが多かった</td><td>録音を波形で調べて二つの原因を特定し、どちらも外した（合図の光は残した）</td></tr>
+    </tbody>
+  </table></div>
+  <h3>他の作品から学んだ共通点</h3>
+  <p>セキロの弾き、カービィの吸い込み、Controlの「掴んで投げ返す」を比べ、気持ちよさに共通する5つを決まりにしました。</p>
+  <div class="cards">
+    <div class="card"><b>① 接点がはっきり見える</b><span>弾が口に入る瞬間を隠さない</span></div>
+    <div class="card"><b>② 一番大きい音は接点の一発</b><span>飲んだ後に盛り上がる音にしない</span></div>
+    <div class="card"><b>③ 抵抗してから負ける</b><span>大きい魔法ほど粘ってから飲まれる</span></div>
+    <div class="card"><b>④ 持っていることが体で見える</b><span>奪った魔法が手元で灯る</span></div>
+    <div class="card"><b>⑤ すぐ使える</b><span>吸った直後に撃ち返せる</span></div>
+  </div>
+  <div class="note"><p>次の段階として、吸い込むタイミングで成功を3段（ジャスト・普通・早め）に分け、うまく取れたときほど演出が大きくなる設計を進めています。成功した後に罰を置かない、格付けの文字は出さない、押してから口が開くまでの速さは変えない、という決まりをチームで決めたうえで作っています。</p></div>
+</div></section>
+
+<section id="c5"><div class="wrap">
+  <div class="num">05 · 努力・突き詰め（制作工程）</div>
+  <h2>作って、撮って、比べて、直す</h2>
+  <div class="split">
+    <div>
+      <p>手触りや演出は、感覚だけで決めずに、録画して比べることを繰り返しました。中心のドレインホールは、少なくとも3回（9/15、9/21、10/19）大きく作り直しています。そのうえで、似た仕組みの8作品と比べて「足りないもの」を32項目に分けて洗い出し、次の作り込みの設計書にまとめました。</p>
+      <ol class="time">
+        <li><time>2026.09.01</time><span>Steamのストアページ（近日登場）を公開</span></li>
+        <li><time>2026.09</time><span>体験版の原型ができる（塔のダンジョン、魔法使い、ボス）。展示会向けの映像を制作</span></li>
+        <li><time>2026.09.15 / 09.21</time><span>ドレインホールの演出を調整（接点の光と音）</span></li>
+        <li><time>2026.10.12</time><span>Next Fest 用のトレーラー初版を制作。体験版にお知らせ・掲示板への導線を追加</span></li>
+        <li><time>2026.10.15</time><span>層ごとの性格（目覚め・亡き者・魔法仕掛け）と、メインの目標表示を実装</span></li>
+        <li><time>2026.10.17〜20</time><span>マジャーク登場演出を作り込み。ゲートからの出方、赤い目、咆哮の圧を足していく</span></li>
+        <li><time>2026.10.19</time><span>ドレインホールの手触りをコマ送りで診断して作り直し</span></li>
+        <li><time>2026.10.20〜</time><span>Steam Next Fest に体験版で参加。遊んだ人の反応を見ながら更新を続けている</span></li>
+      </ol>
+    </div>
+    <div>
+      <h3 style="margin-top:0">例：ボスの咆哮ができるまで</h3>
+      <p>Unity標準の灰色のマテリアルから、自作のセルシェーダー、炎の髪のシェーダー、11層のエフェクト、画面の揺れと圧を一つずつ足していきました。咆哮の声は、チームメンバーが実際に叫んだ声を使っています。</p>
+      <div class="short"><iframe src="https://www.youtube-nocookie.com/embed/6jWN5pquKjQ" title="ボスの咆哮のメイキング" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="cap">Unity標準のマテリアルから完成形までの比較（ショート動画）</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="c6"><div class="wrap">
+  <div class="num">06 · 商品としての完成度</div>
+  <h2>Steamで配信し、実際のプレイヤーに遊んでもらっている</h2>
+  <p>体験版をSteamで配信し、2026年10月のSteam Next Festに参加しています。ストアページ、トレーラー、プレスキット、公式サイトまで、販売に必要なものをチームで用意しました。</p>
+  <div class="stats">
+    <div class="stat"><b>約7割</b><span>Next Fest 初日に体験版を遊んだ人のうち、ウィッシュリストに入れた人の割合（18人中12人）</span></div>
+    <div class="stat"><b>約15分</b><span>体験版のプレイ時間（第3層まで）</span></div>
+    <div class="stat"><b>2027年1月</b><span>早期アクセス開始予定</span></div>
+  </div>
+  <p>早期アクセスでは、新しいボス、罠魔法、新しい敵、閉じた部屋ではない開けた層を順に追加していく予定です。</p>
+  <dl class="facts">
+    <dt>タイトル</dt><dd>DIMAZE（ディメイズ）</dd>
+    <dt>ジャンル</dt><dd>3Dアクションローグライト</dd>
+    <dt>対応機種</dt><dd>PC（Steam）</dd>
+    <dt>体験版</dt><dd>配信中（無料・約15分）</dd>
+    <dt>価格（予定）</dt><dd>980円／$9.99</dd>
+    <dt>対応言語</dt><dd>日本語／英語</dd>
+    <dt>エンジン</dt><dd>Unity</dd>
+    <dt>開発</dt><dd>DIMAZE開発チーム（学生チーム）</dd>
+  </dl>
+  <div class="btns">
+    <a class="btn primary" href="https://store.steampowered.com/app/4859690/DIMAZE/?utm_source=gck2026" target="_blank" rel="noopener">Steamで体験版を遊ぶ</a>
+    <a class="btn" href="../" target="_blank" rel="noopener">公式サイト</a>
+    <a class="btn" href="../press/" target="_blank" rel="noopener">プレスキット（画像・GIF・動画）</a>
+  </div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <div class="num">自チームで制作していない部分</div>
+  <h2>AIと外部素材の使用箇所</h2>
+  <div class="tw"><table>
+    <thead><tr><th>使った箇所</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td><b>開発の支援（AI）</b></td><td>AIアシスタント（Claude）を、コードの作成と修正、不具合の原因調査、演出の分析、資料作り、宣伝素材の編集の補助に使いました。どの演出を入れるか、何を良しとするかの判断は、チームで遊んで確かめて決めています。</td></tr>
+      <tr><td><b>敵の声（AI）</b></td><td>一部の敵の声は、録音した声をAIで加工して作りました。ボスの咆哮は、チームメンバーが叫んだ声です。</td></tr>
+      <tr><td><b>エフェクト素材</b></td><td>一部のエフェクトのテクスチャに、無料配布の素材（Brackeys' VFX Bundle、CC0）を使っています。シェーダーと組み合わせ方は自作です。</td></tr>
+      <tr><td><b>トレーラーの音楽</b></td><td>トレーラーのBGMは、フリー素材サイト OpenTracks の楽曲「Hard Advent」を使用しています（ゲーム内にBGMはありません）。</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<footer><div class="wrap">DIMAZE開発チーム · この資料は審査用に作成しました · <a href="../">公式サイトへ</a></div></footer>
+</body>
+</html>
